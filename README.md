@@ -37,11 +37,73 @@ STEP 5:Normalizing the data<BR>
 STEP 6:Splitting the data into test and train<BR>
 
 ##  PROGRAM:
-TYPE YOUR CODE HERE
+```
+import pandas as pd
+import io
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+#Reading the dataset
+df=pd.read_csv("/content/Churn_Modelling (1).csv", index_col="RowNumber")
+df
+#Dropping the unwanted Columns
+df.drop(['CustomerId'],axis=1,inplace=True)
+df.drop(['Surname'],axis=1,inplace=True)
+df.drop('Age',axis=1,inplace=True)
+df.drop('Geography',axis=1,inplace=True)
+df.drop('Gender',axis=1,inplace=True)
+df
+#Checking for null values
+df.isnull().sum()
+#Checking for duplicate values
+df.duplicated()
+#Describing the dataset
+df.describe()
+#Scaling the dataset
+scaler=StandardScaler()
+df1=pd.DataFrame(scaler.fit_transform(df))
+df1
+#Allocating X and Y attributes
+x=df1.iloc[:,:-1].values
+x
+y=df1.iloc[:,-1].values
+y
+#Splitting the data into training and testing dataset
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2)
+print(x_train)
+print(len(x_train))
+print(x_test)
+print(len(x_test))
+```
 
 
 ## OUTPUT:
-SHOW YOUR OUTPUT HERE
+### DataSet
+![image](https://github.com/DhanushPalani/Ex-1-NN/assets/121594640/13c95d9f-177c-49ff-b912-0e6c7e85b5a3)
+### Dropping Unwanted Features
+![image](https://github.com/DhanushPalani/Ex-1-NN/assets/121594640/24dd557d-d932-4c08-b4ae-9754cc7780c7)
+### Checking for Null Values
+![image](https://github.com/DhanushPalani/Ex-1-NN/assets/121594640/321abb7e-d745-4297-9c33-f5a7ec4fd57e)
+### Checking for Duplication
+![image](https://github.com/DhanushPalani/Ex-1-NN/assets/121594640/06867b64-fb4f-4860-bfb4-0013ae89ae21)
+### Describing the Dataset
+![image](https://github.com/DhanushPalani/Ex-1-NN/assets/121594640/362831d4-5904-42c3-8c43-7f82e3990a65)
+### Scaling the Values
+![image](https://github.com/DhanushPalani/Ex-1-NN/assets/121594640/37f3ff52-4847-4e6b-9bac-bc7b3f8d68c8)
+### X Features
+![image](https://github.com/DhanushPalani/Ex-1-NN/assets/121594640/4924b898-e206-4d3a-83f5-5b596670abaa)
+### Y Features
+![image](https://github.com/DhanushPalani/Ex-1-NN/assets/121594640/2b2d9737-d0de-423f-9be1-6e931e7a4c3c)
+### Splitting the training and testing dataset
+![image](https://github.com/DhanushPalani/Ex-1-NN/assets/121594640/8d50e2bc-26ce-45d9-9a54-3a65c55f0615)
+
+
+
+
+
+
+
+
+
 
 
 ## RESULT:
