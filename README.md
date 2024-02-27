@@ -1,5 +1,5 @@
-<H3>DHANUSH P</H3>
-<H3>212222040034</H3>
+<H3>NAME     :  DHANUSH P</H3>
+<H3>REG NO   :  212222040034</H3>
 <H3>EX. NO.1</H3>
 <H3>DATE</H3>
 <H1 ALIGN =CENTER> Introduction to Kaggle and Data preprocessing</H1>
